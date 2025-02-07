@@ -9,14 +9,14 @@ try {
 const nextConfig = {
   output: 'export', // Active l'export statique
   basePath: '/Portfolio', // Ajoutez cette ligne (remplacez "Portfolio" par le nom de votre dépôt)
+  images: {
+    unoptimized: true, // Désactive l'optimisation des images pour l'export statique
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true, // Désactive l'optimisation des images pour l'export statique
   },
   experimental: {
     webpackBuildWorker: true,
