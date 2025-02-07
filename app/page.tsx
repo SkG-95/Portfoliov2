@@ -1,6 +1,5 @@
 "use client"
 
-import "./globals.css"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTheme } from "next-themes"
@@ -38,6 +37,14 @@ const skillsData = {
     {
       name: "Symfony",
       icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/symfony/symfony-original.svg",
+    },
+    {
+      name: "Spring Boot",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg",
+    },
+    {
+      name: "Angular",
+      icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg",
     },
   ],
   devops: [
@@ -111,9 +118,9 @@ const projects = [
       "Application de gestion du personnel développée en Java. Cette application permet de gérer efficacement les informations des employés, les horaires, et les performances.",
     tech: ["Java", "JavaFX", "MySQL"],
     images: [
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80",
     ],
     features: [
       "Interface utilisateur intuitive",
@@ -128,9 +135,9 @@ const projects = [
       "Projet en cours de développement d'une plateforme e-commerce moderne et responsive. Le site offre une expérience d'achat fluide et sécurisée.",
     tech: ["React", "Node.js", "Express", "MongoDB"],
     images: [
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
     ],
     features: [
       "Design responsive",
@@ -145,9 +152,9 @@ const projects = [
       "Application web de gestion de médias permettant aux utilisateurs de cataloguer et d'organiser leurs collections de films, séries TV, livres et musique.",
     tech: ["PHP", "HTML", "CSS", "JavaScript", "MySQL"],
     images: [
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?auto=format&fit=crop&w=600&q=80",
     ],
     features: [
       "Système de recherche avancé",
@@ -162,9 +169,9 @@ const projects = [
       "Système de distribution automatisée de médicaments conçu pour améliorer la précision et l'efficacité dans les environnements médicaux.",
     tech: ["C", "C++", "Arduino"],
     images: [
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=600&q=80",
     ],
     features: [
       "Interface utilisateur tactile",
@@ -179,9 +186,9 @@ const projects = [
       "Collection de scripts Python pour la collecte et l'analyse de données en ligne, utilisés dans divers projets de recherche et d'analyse de marché.",
     tech: ["Python", "BeautifulSoup", "Scrapy", "Pandas"],
     images: [
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
-      "/placeholder.svg?height=300&width=400",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80",
     ],
     features: [
       "Extraction de données structurées",
@@ -189,6 +196,80 @@ const projects = [
       "Visualisation de données",
       "Automatisation des tâches de collecte",
     ],
+  },
+]
+
+const projectsData = [
+  { name: "Gestionnaire de personnel", description: "Application de gestion du personnel", tech: ["Java"] },
+  { name: "Site E-Commerce", description: "Projet en cours de développement", tech: ["JS", "HTML", "CSS"] },
+  {
+    name: "Répertoire de Media",
+    description: "Application de gestion de médias",
+    tech: ["PHP", "HTML", "CSS", "JavaScript"],
+  },
+  {
+    name: "Distributeur à médicament",
+    description: "Système de distribution automatisée de médicaments",
+    tech: ["C", "C++"],
+  },
+  { name: "Web Scraping", description: "Projets de collecte de données en ligne", tech: ["Python"] },
+]
+
+const skills = [
+  { name: "JavaScript", level: 90 },
+  { name: "HTML/CSS", level: 95 },
+  { name: "Java", level: 85 },
+  { name: "PHP", level: 80 },
+  { name: "Python", level: 85 },
+  { name: "C/C++", level: 75 },
+  { name: "Docker", level: 70 },
+]
+
+const experiences = [
+  {
+    title: "Développeur Visual Basic (Stage)",
+    company: "Texas Instruments",
+    period: "Avril - Juin 2021",
+    description: [
+      "Développement de solutions logicielles en Visual Basic pour répondre aux exigences opérationnelles.",
+      "Automatisation des processus métiers à l'aide de macros avancées.",
+      "Conception de scripts pour le traitement et l'analyse automatisée de données CSV.",
+    ],
+  },
+  {
+    title: "Vendeur",
+    company: "Jardiland",
+    period: "Avril - Juillet 2023",
+    description: [
+      "Coordination logistique : Participation à la réception des livraisons, au tri et au scan des palettes en équipe.",
+      "Service client : Conseils personnalisés dans le domaine animalier en magasin, d'articles spécialisés, en assurant un service professionnel.",
+      "Compétences commerciales : Mise en avant des produits, gestion de l'espace de vente pour optimiser la présentation et faciliter l'accès des clients.",
+    ],
+  },
+]
+
+const education = [
+  {
+    degree: "Bachelor Développeur Full Stack",
+    school: "Ensitech - Campus Cergy Saint-Christophe",
+    period: "Septembre 2024 - Juillet 2025",
+    description: [
+      "Etude de langage de programmation",
+      "Maquettage d'application et configuration d'environnement de travail",
+      "Gestion de projet informatique",
+    ],
+  },
+  {
+    degree: "BTS Système numérique informatique et réseaux",
+    school: "Lycée Jean Jaurès - Argenteuil",
+    period: "Septembre 2020 - Juillet 2022",
+    description: [],
+  },
+  {
+    degree: "Baccalauréat STI2D - Option Système Informatique et Numérique",
+    school: "Lycée Gustave Monod - Enghien-les-Bains",
+    period: "Septembre 2018 - Juillet 2020",
+    description: [],
   },
 ]
 
@@ -231,80 +312,6 @@ export default function Home() {
     { name: "Expérience", icon: Briefcase, section: "experience" },
     { name: "Compétences", icon: Code, section: "skills" },
     { name: "Projets", icon: Folder, section: "projects" },
-  ]
-
-  const projectsData = [
-    { name: "Gestionnaire de personnel", description: "Application de gestion du personnel", tech: ["Java"] },
-    { name: "Site E-Commerce", description: "Projet en cours de développement", tech: ["JS", "HTML", "CSS"] },
-    {
-      name: "Répertoire de Media",
-      description: "Application de gestion de médias",
-      tech: ["PHP", "HTML", "CSS", "JavaScript"],
-    },
-    {
-      name: "Distributeur à médicament",
-      description: "Système de distribution automatisée de médicaments",
-      tech: ["C", "C++"],
-    },
-    { name: "Web Scraping", description: "Projets de collecte de données en ligne", tech: ["Python"] },
-  ]
-
-  const skills = [
-    { name: "JavaScript", level: 90 },
-    { name: "HTML/CSS", level: 95 },
-    { name: "Java", level: 85 },
-    { name: "PHP", level: 80 },
-    { name: "Python", level: 85 },
-    { name: "C/C++", level: 75 },
-    { name: "Docker", level: 70 },
-  ]
-
-  const experiences = [
-    {
-      title: "Développeur Visual Basic (Stage)",
-      company: "Texas Instruments",
-      period: "Avril - Juin 2021",
-      description: [
-        "Développement de solutions logicielles en Visual Basic pour répondre aux exigences opérationnelles.",
-        "Automatisation des processus métiers à l'aide de macros avancées.",
-        "Conception de scripts pour le traitement et l'analyse automatisée de données CSV.",
-      ],
-    },
-    {
-      title: "Vendeur",
-      company: "Jardiland",
-      period: "Avril - Juillet 2023",
-      description: [
-        "Coordination logistique : Participation à la réception des livraisons, au tri et au scan des palettes en équipe.",
-        "Service client : Conseils personnalisés dans le domaine animalier en magasin, d'articles spécialisés, en assurant un service professionnel.",
-        "Compétences commerciales : Mise en avant des produits, gestion de l'espace de vente pour optimiser la présentation et faciliter l'accès des clients.",
-      ],
-    },
-  ]
-
-  const education = [
-    {
-      degree: "Bachelor Développeur Full Stack",
-      school: "Ensitech - Campus Cergy Saint-Christophe",
-      period: "Septembre 2024 - Juillet 2025",
-      description: [
-        "Etude de langage de programmation",
-        "Maquettage d'application et configuration d'environnement de travail",
-        "Gestion de projet informatique",
-      ],
-    },
-    {
-      degree: "BTS Système numérique informatique et réseaux",
-      school: "Lycée Jean Jaurès - Argenteuil",
-      period: "Septembre 2020 - Juillet 2022",
-      description: [],
-    },
-    {
-      degree: "Baccalauréat STI2D - Option Système Informatique et Numérique",
-      school: "Lycée Gustave Monod - Enghien-les-Bains",
-      period: "Septembre 2018 - Juillet 2020",
-      description: [],
-    },
   ]
 
   return (
