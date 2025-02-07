@@ -8,7 +8,7 @@ try {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // Active l'export statique
-  basePath: '/Portfolio', // Remplacez <nom-du-dépôt> par le nom de votre dépôt GitHub
+  basePath: '/Portfolio', // Ajoutez cette ligne (remplacez "Portfolio" par le nom de votre dépôt)
   eslint: {
     ignoreDuringBuilds: true,
   },
